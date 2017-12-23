@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Result from './result';
+import ProgressBar from './progressBar';
 
 class Quiz extends React.Component {
     render() {
         return (
             <section className="quiz">
-                <section clasNames="q q1">
+                <section className="q q1">
                     <h3>Choose a companion</h3>
                     <div className="leftSide">
                         <a href="#" className="answer sushi imgHolder">
@@ -69,15 +70,15 @@ class Quiz extends React.Component {
                     <h3>Shaken or Stirred?</h3>
                         <div className="leftSide">
                             <a href="#" className="answer taco imgHolder">
-                                <img src="assets/shaken.gif" alt="" className="shaken"/>
+                                <img src="public/assets/shaken.gif" alt="" className="shaken"/>
                             </a>
                             <a href="#" className="answer taco text">
                                 <p>Shaken</p>
                             </a>
                         </div>
-                        <div class="rightSide">
+                        <div className="rightSide">
                             <a href="#" className="answer sushi imgHolder">
-                                <img src="assets/stirred.gif" alt=""/>
+                                <img src="public/assets/stirred.gif" alt=""/>
                             </a>
                             <a href="#" className="answer sushi text">
                                 <p>Stirred</p>
@@ -88,7 +89,7 @@ class Quiz extends React.Component {
                     <h3>Do you work well under pressure?</h3>
                         <div className="leftSide">
                             <a href="#" className="answer sushi imgHolder">
-                                <img src="assets/cool.jpg" alt=""/>
+                                <img src="public/assets/cool.jpg" alt=""/>
                             </a>
                             <a href="#" className="answer sushi text">
                                 <p>Totes</p>
@@ -96,7 +97,7 @@ class Quiz extends React.Component {
                         </div>
                         <div className="rightSide">
                             <a href="#" className="answer taco imgHolder">
-                                <img src="assets/sad.jpg" alt=""/>
+                                <img src="public/assets/sad.jpg" alt=""/>
                             </a>
                             <a href="#" className="answer taco text">
                                 <p>Noop</p>
@@ -107,15 +108,15 @@ class Quiz extends React.Component {
                     <h3>Introvert or Extrovert?</h3>
                         <div className="leftSide">
                             <a href="#" className="answer sushi imgHolder">
-                                <img src="assets/dont.jpg" alt=""/>
+                                <img src="public/assets/dont.jpg" alt=""/>
                             </a>
                             <a href="#" className="answer sushi text">
                                 <p>Introvert</p>
                             </a>
                         </div>
-                        <div class="rightSide">
+                        <div className="rightSide">
                             <a href="#" className="answer taco imgHolder">
-                                <img src="assets/hay.jpg" alt=""/>
+                                <img src="public/assets/hay.jpg" alt=""/>
                             </a>
                             <a href="#" className="answer taco text">
                                 <p>Extrovert</p>
@@ -126,7 +127,7 @@ class Quiz extends React.Component {
                     <h3>Pushasaur or Pushmander</h3>
                         <div className="leftSide">
                             <a href="#" className="answer sushi imgHolder">
-                                <img src="assets/bulba.jpg" alt=""/>
+                                <img src="public/assets/bulba.jpg" alt=""/>
                             </a>
                             <a href="#" className="answer sushi text">
                                 <p>Pushasaur</p>
@@ -134,7 +135,7 @@ class Quiz extends React.Component {
                         </div>
                         <div className="rightSide">
                             <a href="#" className="answer taco imgHolder">
-                                <img src="assets/char.jpg" alt=""/>
+                                <img src="public/assets/char.jpg" alt=""/>
                             </a>
                             <a href="#" className="answer taco text">
                                 <p>Pushmander</p>
@@ -142,6 +143,7 @@ class Quiz extends React.Component {
                         </div>
                         <a href="#" className="submit">Submit!</a>
                 </section>
+                <ProgressBar />
             </section>
         )
     }
