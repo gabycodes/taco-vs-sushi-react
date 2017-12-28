@@ -1,29 +1,163 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Result from './result';
 import ProgressBar from './progressBar';
 
 class Quiz extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            questionsAnswered: 0,
+            q1: "notAnswered",            
+            q2: "notAnswered",            
+            q3: "notAnswered",            
+            q4: "notAnswered",            
+            q5: "notAnswered",            
+            q6: "notAnswered",            
+            q7: "notAnswered",
+            divStyle: {
+                transition: "top 1s ease-in",
+                top: "0vh"
+            }      
+        }
+        this.question1Answered = this.question1Answered.bind(this);
+        this.question2Answered = this.question2Answered.bind(this);
+        this.question3Answered = this.question3Answered.bind(this);
+        this.question4Answered = this.question4Answered.bind(this);
+        this.question5Answered = this.question5Answered.bind(this);
+        this.question6Answered = this.question6Answered.bind(this);
+        this.question7Answered = this.question7Answered.bind(this);
+        this.flyAway = this.flyAway.bind(this);
+    }
+    
+    
+    flyAway() {
+        this.setState({
+            divStyle: {
+                transition: "top 1s ease-in",
+                top: "-100vh"
+            }     
+        })
+    }
+    // updateProgress() {
+    //     q1 = document.getElementsByClassName("q1");
+    //     q2 = document.getElementsByClassName("q2");
+    //     q3 = document.getElementsByClassName("q3");
+    //     q4 = document.getElementsByClassName("q4");
+    //     q5 = document.getElementsByClassName("q5");
+    //     q6 = document.getElementsByClassName("q6");
+    //     q7 = document.getElementsByClassName("q7");
+        
+    //     if (q1.classList.contains("answered")) {
+    //         console.log("question 1 answered");
+    //         this.setState({
+    //             questionsAnswered: 1
+    //         })
+    //     }
+    //     if (q2.classList.contains("answered")) {
+    //         console.log("question 2 answered");
+    //         this.setState({
+    //             questionsAnswered: 2
+    //         })
+    //     }
+    //     if (q3.classList.contains("answered")) {
+    //         console.log("question 3 answered");
+    //         this.setState({
+    //             questionsAnswered: 3
+    //         })
+    //     }
+    //     if (q4.classList.contains("answered")) {
+    //         console.log("question 4 answered");
+    //         this.setState({
+    //             questionsAnswered: 4
+    //         })
+    //     }
+    //     if (q1.classList.contains("answered")) {
+    //         console.log("question 1 answered");
+    //         this.setState({
+    //             questionsAnswered: 1
+    //         })
+    //     }
+    //     if (q1.classList.contains("answered")) {
+    //         console.log("question 1 answered");
+    //         this.setState({
+    //             questionsAnswered: 1
+    //         })
+    //     }
+    //     if (q1.classList.contains("answered")) {
+    //         console.log("question 1 answered");
+    //         this.setState({
+    //             questionsAnswered: 1
+    //         })
+    //     }
+
+    // }
+    
+    question1Answered() {
+        console.log("question 1 answered");
+        const q1 = document.getElementsByClassName("q1");
+        this.setState({
+            questionsAnswered: 1,
+            q1: "answered"
+        })
+        this.flyAway();
+        // const q1 = document.getElementsByClassName('q1');
+        // q1.classList.add('flyAway');
+    }
+    question2Answered() {
+        console.log("question 2 answered");
+        this.setState({
+            questionsAnswered: 2
+        })
+    }
+    question3Answered() {
+        console.log("question 3 answered");
+        this.setState({
+            questionsAnswered: 3
+        })
+    }
+    question4Answered() {
+        this.setState({
+            questionsAnswered: 4
+        })
+    }
+    question5Answered() {
+        this.setState({
+            questionsAnswered: 5
+        })
+    }
+    question6Answered() {
+        this.setState({
+            questionsAnswered: 6
+        })
+    }
+    question7Answered() {
+        this.setState({
+            questionsAnswered: 7
+        })
+    }
+
     render() {
         return (
             <section className="quiz">
-                <section className="q q1">
+                {console.log(this.state.q1)}
+                <section className="q q1 {this.state.q1}" style={this.state.divStyle}>
+                    {console.log(this.state.q1)}
                     <h3>Choose a companion</h3>
                     <div className="leftSide">
-                        <a href="#" className="answer sushi imgHolder">
+                        <a href="#" className="answer sushi imgHolder" onClick={this.question1Answered}>
                             <img src="public/assets/cat.jpg" alt=""/>
                         </a>
-                        <a href="#" className="answer sushi text">
+                        <a href="#" className="answer sushi text" onClick={this.question1Answered}>
                             <p>cat</p>
                         </a>
                     </div>
                     <div className="rightSide">
-                        <a href="#" className="answer taco imgHolder">
+                        <a href="#" className="answer taco imgHolder" onClick={this.question1Answered}>
                             <img src="public/assets/dog.jpg" alt=""/>
                         </a>
-                        <a href="#" className="answer taco text">
+                        <a href="#" className="answer taco text" onClick={this.question1Answered}>
                             <p>dog</p>
                         </a>
                     </div>

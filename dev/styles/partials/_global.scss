@@ -70,7 +70,6 @@ section {
     width: 100vw;
     height: 100vh;
 }
-
 .text, .startQuiz, .submit, .tweetIt, .playAgain, .decoyTweetIt {
     text-decoration: none;
     color: white;
@@ -189,6 +188,8 @@ a.credits:hover {
 .q {
     display: flex;
     text-transform: uppercase;
+    top: 0;
+    transition: top 1s ease-in;
 }
 .q1 {
     z-index: 7;
@@ -210,6 +211,15 @@ a.credits:hover {
 }
 .q7 {
     z-index: 1;
+}
+
+.answered {
+    // transition: all 0.5s ease-in;
+    // animation: flyAway 1s ease-in;
+    
+    top: -100vh;
+    color: blue;
+    background: yellow;
 }
 section.submit {
     z-index: 99;
