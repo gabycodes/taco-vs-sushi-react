@@ -183,7 +183,7 @@ a.credits:hover {
     height: 100%;
     width: 0;
     transition: width 1s ease-in,
-                background 1s ease-in-out;
+    background 1s ease-in-out;
 }
 .q {
     display: flex;
@@ -218,8 +218,6 @@ a.credits:hover {
     // animation: flyAway 1s ease-in;
     
     top: -100vh;
-    color: blue;
-    background: yellow;
 }
 section.submit {
     z-index: 99;

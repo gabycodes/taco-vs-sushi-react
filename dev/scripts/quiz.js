@@ -15,11 +15,7 @@ class Quiz extends React.Component {
             q4: "notAnswered",            
             q5: "notAnswered",            
             q6: "notAnswered",            
-            q7: "notAnswered",
-            divStyle: {
-                transition: "top 1s ease-in",
-                top: "0vh"
-            }      
+            q7: "notAnswered"
         }
         this.question1Answered = this.question1Answered.bind(this);
         this.question2Answered = this.question2Answered.bind(this);
@@ -28,18 +24,18 @@ class Quiz extends React.Component {
         this.question5Answered = this.question5Answered.bind(this);
         this.question6Answered = this.question6Answered.bind(this);
         this.question7Answered = this.question7Answered.bind(this);
-        this.flyAway = this.flyAway.bind(this);
+        // this.flyAway = this.flyAway.bind(this);
     }
     
     
-    flyAway() {
-        this.setState({
-            divStyle: {
-                transition: "top 1s ease-in",
-                top: "-100vh"
-            }     
-        })
-    }
+    // flyAway() {
+    //     this.setState({
+    //         divStyle: {
+    //             transition: "top 1s ease-in",
+    //             top: "-100vh"
+    //         }     
+    //     })
+    // }
     // updateProgress() {
     //     q1 = document.getElementsByClassName("q1");
     //     q2 = document.getElementsByClassName("q2");
@@ -101,40 +97,43 @@ class Quiz extends React.Component {
             questionsAnswered: 1,
             q1: "answered"
         })
-        this.flyAway();
-        // const q1 = document.getElementsByClassName('q1');
-        // q1.classList.add('flyAway');
     }
     question2Answered() {
         console.log("question 2 answered");
         this.setState({
-            questionsAnswered: 2
+            questionsAnswered: 2,
+            q2: "answered"
         })
     }
     question3Answered() {
         console.log("question 3 answered");
         this.setState({
-            questionsAnswered: 3
+            questionsAnswered: 3,
+            q3: "answered"
         })
     }
     question4Answered() {
         this.setState({
-            questionsAnswered: 4
+            questionsAnswered: 4,
+            q4: "answered"
         })
     }
     question5Answered() {
         this.setState({
-            questionsAnswered: 5
+            questionsAnswered: 5,
+            q5: "answered"
         })
     }
     question6Answered() {
         this.setState({
-            questionsAnswered: 6
+            questionsAnswered: 6,
+            q6: "answered"
         })
     }
     question7Answered() {
         this.setState({
-            questionsAnswered: 7
+            questionsAnswered: 7,
+            q7: "answered"
         })
     }
 
@@ -142,7 +141,7 @@ class Quiz extends React.Component {
         return (
             <section className="quiz">
                 {console.log(this.state.q1)}
-                <section className="q q1 {this.state.q1}" style={this.state.divStyle}>
+                <section className={`q q1 ${this.state.q1}`}>
                     {console.log(this.state.q1)}
                     <h3>Choose a companion</h3>
                     <div className="leftSide">
@@ -162,116 +161,116 @@ class Quiz extends React.Component {
                         </a>
                     </div>
                 </section>
-                <section className="q q2">
+                <section className={`q q2 ${this.state.q2}`}>
                     <h3>Last Saturday night, you...</h3>
                         <div className="leftSide">
-                            <a href="#" className="answer taco imgHolder">
+                            <a href="#" className="answer taco imgHolder"  onClick={this.question2Answered}>
                                 <img src="public/assets/party.jpg" alt=""/>
                             </a>
-                            <a href="#" className="answer taco text">
+                            <a href="#" className="answer taco text"  onClick={this.question2Answered}>
                                 <p>Partied</p>
                             </a>
                         </div>
                         <div className="rightSide">
-                            <a href="#" className="answer sushi imgHolder">
+                            <a href="#" className="answer sushi imgHolder"  onClick={this.question2Answered}>
                                 <img src="public/assets/laze.jpg" alt=""/>
                             </a>
-                            <a href="#" className="answer sushi text">
+                            <a href="#" className="answer sushi text"  onClick={this.question2Answered}>
                                 <p>Stayed In</p>
                             </a>
                         </div>
                 </section>
-                <section className="q q3">
+                <section className={`q q3 ${this.state.q3}`}>
                     <h3>Summer or Winter?</h3>
                         <div className="leftSide">
-                            <a href="#" className="answer taco imgHolder">
+                            <a href="#" className="answer taco imgHolder" onClick={this.question3Answered}>
                                 <img src="public/assets/summer.jpg" alt=""/>
                             </a>
-                            <a href="#" className="answer taco text">
+                            <a href="#" className="answer taco text" onClick={this.question3Answered}>
                                 <p>Summer</p>
                             </a>
                         </div>
                         <div className="rightSide">
-                            <a href="#" className="answer sushi imgHolder">
+                            <a href="#" className="answer sushi imgHolder" onClick={this.question3Answered}>
                                 <img src="public/assets/winter.jpg" alt=""/>
                             </a>
-                            <a href="#" className="answer sushi text">
+                            <a href="#" className="answer sushi text" onClick={this.question3Answered}>
                                 <p>Winter</p>
                             </a>
                         </div>
                 </section>
-                <section className="q q4">
+                <section className={`q q4 ${this.state.q4}`}>
                     <h3>Shaken or Stirred?</h3>
                         <div className="leftSide">
-                            <a href="#" className="answer taco imgHolder">
+                            <a href="#" className="answer taco imgHolder" onClick={this.question4Answered}>
                                 <img src="public/assets/shaken.gif" alt="" className="shaken"/>
                             </a>
-                            <a href="#" className="answer taco text">
+                            <a href="#" className="answer taco text" onClick={this.question4Answered}>
                                 <p>Shaken</p>
                             </a>
                         </div>
                         <div className="rightSide">
-                            <a href="#" className="answer sushi imgHolder">
+                            <a href="#" className="answer sushi imgHolder" onClick={this.question4Answered}>
                                 <img src="public/assets/stirred.gif" alt=""/>
                             </a>
-                            <a href="#" className="answer sushi text">
+                            <a href="#" className="answer sushi text" onClick={this.question4Answered}>
                                 <p>Stirred</p>
                             </a>
                         </div>
                 </section>
-                <section className="q q5">
+                <section className={`q q5 ${this.state.q5}`}>
                     <h3>Do you work well under pressure?</h3>
                         <div className="leftSide">
-                            <a href="#" className="answer sushi imgHolder">
+                            <a href="#" className="answer sushi imgHolder"  onClick={this.question5Answered}>
                                 <img src="public/assets/cool.jpg" alt=""/>
                             </a>
-                            <a href="#" className="answer sushi text">
+                            <a href="#" className="answer sushi text"  onClick={this.question5Answered}>
                                 <p>Totes</p>
                             </a>
                         </div>
                         <div className="rightSide">
-                            <a href="#" className="answer taco imgHolder">
+                            <a href="#" className="answer taco imgHolder"  onClick={this.question5Answered}>
                                 <img src="public/assets/sad.jpg" alt=""/>
                             </a>
-                            <a href="#" className="answer taco text">
+                            <a href="#" className="answer taco text"  onClick={this.question5Answered}>
                                 <p>Noop</p>
                             </a>
                         </div>
                 </section>
-                <section className="q q6">
+                <section className={`q q6 ${this.state.q6}`}>
                     <h3>Introvert or Extrovert?</h3>
                         <div className="leftSide">
-                            <a href="#" className="answer sushi imgHolder">
+                            <a href="#" className="answer sushi imgHolder" onClick={this.question6Answered}>
                                 <img src="public/assets/dont.jpg" alt=""/>
                             </a>
-                            <a href="#" className="answer sushi text">
+                            <a href="#" className="answer sushi text" onClick={this.question6Answered}>
                                 <p>Introvert</p>
                             </a>
                         </div>
                         <div className="rightSide">
-                            <a href="#" className="answer taco imgHolder">
+                            <a href="#" className="answer taco imgHolder" onClick={this.question6Answered}>
                                 <img src="public/assets/hay.jpg" alt=""/>
                             </a>
-                            <a href="#" className="answer taco text">
+                            <a href="#" className="answer taco text" onClick={this.question6Answered}>
                                 <p>Extrovert</p>
                             </a>
                         </div>
                 </section>
-                <section className="q q7">
+                <section className={`q q7 ${this.state.q7}`}>
                     <h3>Pushasaur or Pushmander</h3>
                         <div className="leftSide">
-                            <a href="#" className="answer sushi imgHolder">
+                            <a href="#" className="answer sushi imgHolder" onClick={this.question7Answered}>
                                 <img src="public/assets/bulba.jpg" alt=""/>
                             </a>
-                            <a href="#" className="answer sushi text">
+                            <a href="#" className="answer sushi text" onClick={this.question7Answered}>
                                 <p>Pushasaur</p>
                             </a>
                         </div>
                         <div className="rightSide">
-                            <a href="#" className="answer taco imgHolder">
+                            <a href="#" className="answer taco imgHolder" onClick={this.question7Answered}>
                                 <img src="public/assets/char.jpg" alt=""/>
                             </a>
-                            <a href="#" className="answer taco text">
+                            <a href="#" className="answer taco text" onClick={this.question7Answered}>
                                 <p>Pushmander</p>
                             </a>
                         </div>
