@@ -8,9 +8,9 @@ class Result extends React.Component {
     constructor(props) {
         super(props);
         this.populatePage = this.populatePage.bind(this);
-        this.result = "burrito";
     }
     populatePage(result) {
+        this.result = result;
         this.resultHeader = `You're on team ${result}!`;
         if (result === "taco") {
             this.resultImageUrl = "public/assets/tacoCheeky.png";
@@ -28,11 +28,8 @@ class Result extends React.Component {
                     <img src={`${this.resultImageUrl}`} alt=""/>
                     </div>
                     <p>{`${this.resultBlurb}`}</p>
-                    {/* <Switch>
-                        <Route exact path="/" component={SplashPage} />
-                    </Switch> */}
                     <a href="" className="playAgain">Play again!</a>
-                    <a href="https://twitter.com/intent/tweet?hashtags=tacoVsSushi&text=hello!" target="_blank" className="decoyTweetIt twitter-share-button">Tweet it!</a>
+                    <a href={`https://twitter.com/intent/tweet?hashtags=tacoVsSushi&text=I'm on team ${this.result}! http://bit.ly/2jBDX6b #tacoVsSushi`} target="_blank" className="decoyTweetIt twitter-share-button">Tweet it!</a>
                 </section>
         )
     }

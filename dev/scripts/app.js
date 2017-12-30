@@ -22,9 +22,6 @@ class App extends React.Component {
     this.toggleProgress = this.toggleProgress.bind(this);
     this.scoreKeeper = this.scoreKeeper.bind(this);
     this.determineResult = this.determineResult.bind(this);
-    // this.populateResultPage = this.populateResultPage.bind(this);
-    // this.changeToTaco = this.changeToTaco.bind(this);
-    // this.changeToSushi = this.changeToSushi.bind(this);
   }
   updateCurrentPage(page) {
     this.setState({
@@ -92,27 +89,13 @@ class App extends React.Component {
     })
     this.child.populatePage(result);
   }
-  // alertResultPage(userResult) {
-  //   this.child.populatePage();
-
-    
-
-  // }
     render() {
       return (
           <div>
             <SplashPage />
             <Quiz toggleProgressBar={this.toggleProgress} scoreKeeper={this.scoreKeeper} determineResult={this.determineResult}/>
-            {/* <Result /> */}
-              {/* <Route component={SplashPage}/> */}
-              { /* <Route exact path="/" component={SplashPage} currentPage={this.updateCurrentPage} /> */ }
-              {/* <Route path="/quiz" component={Quiz} currentPage={this.updateCurrentPage}/>
-              <Route path="/result" component={Result} currentPage={this.updateCurrentPage}/> */}
-              
-              <Result ref={instance => { this.child = instance; }}/>
-            
+            <Result ref={instance => { this.child = instance; }}/>
           </div>
-        
       )
     }
 }
