@@ -25,13 +25,13 @@ class Quiz extends React.Component {
         this.question5Answered = this.question5Answered.bind(this);
         this.question6Answered = this.question6Answered.bind(this);
         this.question7Answered = this.question7Answered.bind(this);
-        // this.hideProgressBar = this.hideProgressBar.bind(this);
+        this.hideProgressBar = this.hideProgressBar.bind(this);
     }
-    // hideProgressBar() {
-    //     const progressBar = document.getElementsByClassName("progressBar")[0];
-    //     progressBar.style.top = "0";
-    // }
-
+    hideProgressBar() {
+        console.log("hiding progress bar...");
+        const progressBar = document.getElementsByClassName("progressBarHolder")[0];
+        progressBar.style.bottom = "0vh";
+    }
     question1Answered(team) {
         this.setState({
             questionsAnswered: 1,
@@ -105,7 +105,6 @@ class Quiz extends React.Component {
     render() {
         return (
             <section className="quiz">
-            { /* {this.showProgressBar()} */ }
                 <section className={`q q1 ${this.state.q1}`}>
                     <h3>Choose a companion</h3>
                     <div className="leftSide">
@@ -223,18 +222,18 @@ class Quiz extends React.Component {
                 <section className={`q q7 ${this.state.q7}`}>
                     <h3>Pushasaur or Pushmander</h3>
                         <div className="leftSide">
-                        <a href="#" className="answer sushi imgHolder" onClick={() => {this.question7Answered("sushi"); this.props.determineResult()}}>
+                        <a href="#" className="answer sushi imgHolder" onClick={() => {this.question7Answered("sushi"); this.props.determineResult(); this.hideProgressBar()}}>
                                 <img src="public/assets/bulba.jpg" alt=""/>
                             </a>
-                        <a href="#" className="answer sushi text" onClick={() => { this.question7Answered("sushi"); this.props.determineResult()}}>
+                        <a href="#" className="answer sushi text" onClick={() => { this.question7Answered("sushi"); this.props.determineResult(); this.hideProgressBar()}}>
                                 <p>Pushasaur</p>
                             </a>
                         </div>
                         <div className="rightSide">
-                        <a href="#" className="answer taco imgHolder" onClick={() => { this.question7Answered("taco"); this.props.determineResult()}}>
+                        <a href="#" className="answer taco imgHolder" onClick={() => { this.question7Answered("taco"); this.props.determineResult(); this.hideProgressBar()}}>
                                 <img src="public/assets/char.jpg" alt=""/>
                             </a>
-                        <a href="#" className="answer taco text" onClick={() => { this.question7Answered("taco"); this.props.determineResult()}}>
+                        <a href="#" className="answer taco text" onClick={() => { this.question7Answered("taco"); this.props.determineResult(); this.hideProgressBar()}}>
                                 <p>Pushmander</p>
                             </a>
                         </div>

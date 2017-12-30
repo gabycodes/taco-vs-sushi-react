@@ -12,19 +12,22 @@ class Result extends React.Component {
     }
     populatePage(result) {
         this.resultHeader = `You're on team ${result}!`;
-        this.resultImageUrl = `public/assets/${result}cheeky.png`;
-        const tacoBlurb = "Hola amigo! Welcome to team taco. May the guac shine down upon you today."
-        const sushiBlurb = "Konichiwa! Welcome to team sushi, honorable nori-san."
-        this.resultBlurb = `${result}Blurb`
+        if (result === "taco") {
+            this.resultImageUrl = "public/assets/tacoCheeky.png";
+            this.resultBlurb = "Hola amigo! Welcome to team taco. May the good guac shine down upon you today."
+        } else if (result === "sushi") {
+            this.resultImageUrl = "public/assets/sushiCheeky.png";
+            this.resultBlurb = "Konichiwa! Welcome to team sushi, honorable nori-san."
+        }
     }
     render() {
         return (
                 <section className="result">
                     <h3>{`${this.resultHeader}`}</h3>
                     <div className="imgHolder">
-                        <img src="" alt=""/>
+                    <img src={`${this.resultImageUrl}`} alt=""/>
                     </div>
-                    <p></p>
+                    <p>{`${this.resultBlurb}`}</p>
                     {/* <Switch>
                         <Route exact path="/" component={SplashPage} />
                     </Switch> */}
