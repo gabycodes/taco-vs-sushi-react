@@ -5,10 +5,22 @@ import Quiz from './quiz';
 import SplashPage from './splashPage';
 
 class Result extends React.Component {
+    constructor(props) {
+        super(props);
+        this.populatePage = this.populatePage.bind(this);
+        this.result = "burrito";
+    }
+    populatePage(result) {
+        this.resultHeader = `You're on team ${result}!`;
+        this.resultImageUrl = `public/assets/${result}cheeky.png`;
+        const tacoBlurb = "Hola amigo! Welcome to team taco. May the guac shine down upon you today."
+        const sushiBlurb = "Konichiwa! Welcome to team sushi, honorable nori-san."
+        this.resultBlurb = `${result}Blurb`
+    }
     render() {
         return (
                 <section className="result">
-                    <h3></h3>
+                    <h3>{`${this.resultHeader}`}</h3>
                     <div className="imgHolder">
                         <img src="" alt=""/>
                     </div>

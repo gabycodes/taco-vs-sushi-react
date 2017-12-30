@@ -13,7 +13,6 @@ class App extends React.Component {
       progressBarVisible: false,
       tacoScore: 0,
       sushiScore: 0,
-      lastAnswer: "",
       result: ""
     }
     this.tacoScore = 0;
@@ -23,7 +22,7 @@ class App extends React.Component {
     this.toggleProgress = this.toggleProgress.bind(this);
     this.scoreKeeper = this.scoreKeeper.bind(this);
     this.determineResult = this.determineResult.bind(this);
-    this.populateResultPage = this.populateResultPage.bind(this);
+    // this.populateResultPage = this.populateResultPage.bind(this);
     // this.changeToTaco = this.changeToTaco.bind(this);
     // this.changeToSushi = this.changeToSushi.bind(this);
   }
@@ -46,7 +45,6 @@ class App extends React.Component {
     }
   }
   scoreKeeper(team) {
-    // console.log("scoreKeeper", team);
     let tacoScoreCurrent = this.state.tacoScore;
     let sushiScoreCurrent = this.state.sushiScore;
     if (team === "taco") {
@@ -65,8 +63,6 @@ class App extends React.Component {
       this.setState({
         sushiScore: sushiScoreNew
       })
-      // sushiScoreCurrent === sushiScoreNew;
-      // console.log(`sushiScore: ${sushiScoreCurrent}`);
     }
   }
   determineResult() {
@@ -91,12 +87,17 @@ class App extends React.Component {
         console.log(`You're on team ${result}`)
       }
     }
-    populateResultPage(result);
+    this.setState({
+      result: result
+    })
+    this.child.populatePage(result);
   }
-  populateResultPage(result) {
+  // alertResultPage(userResult) {
+  //   this.child.populatePage();
+
     
 
-  }
+  // }
     render() {
       return (
           <div>
@@ -108,7 +109,7 @@ class App extends React.Component {
               {/* <Route path="/quiz" component={Quiz} currentPage={this.updateCurrentPage}/>
               <Route path="/result" component={Result} currentPage={this.updateCurrentPage}/> */}
               
-            <Result />
+              <Result ref={instance => { this.child = instance; }}/>
             
           </div>
         
