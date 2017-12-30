@@ -4,6 +4,16 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Quiz from './quiz';
 
 class SplashPage extends React.Component {
+    constructor(props) {
+        super();
+        this.flyAway = this.flyAway.bind(this);
+    }
+    flyAway(e) {
+        const splashPage = document.getElementsByClassName("splash")[0];
+        splashPage.style.top = "-100vh";
+        // e.preventDefault();
+        console.log("quiz started");
+    }
     render() {
         return (
             <section className="splash">
@@ -22,8 +32,10 @@ class SplashPage extends React.Component {
                     </div>
                 </div>
                 <h2>In the ultimate showdown, who will you stand beside??</h2>
-                <Link to="/quiz" className="startQuiz">Begin</Link>
-                <Route path="/quiz" component={Quiz} />
+                <a href="#" className="startQuiz" onClick={(event) => { this.flyAway();}}>Begin</a>
+                {/* <Link to="/quiz" className="startQuiz">Begin</Link>
+                <Route path="/quiz" component={Quiz} /> */}
+
                 {/*<Route exact path="/" component={Quiz} /> */}
                 {/* <a href="#" class="startQuiz">Begin!</a> */}
                 <a href="http://www.pusheen.com/" className="credits">Images from www.pusheen.com!</a>

@@ -7,17 +7,17 @@ import SplashPage from './splashPage';
 class Result extends React.Component {
     render() {
         return (
-                <section class="result">
+                <section className="result">
                     <h3></h3>
-                    <div class="imgHolder">
+                    <div className="imgHolder">
                         <img src="" alt=""/>
                     </div>
                     <p></p>
-                    <Switch>
+                    {/* <Switch>
                         <Route exact path="/" component={SplashPage} />
-                    </Switch>
-                    <a href="#" class="playAgain">Play again!</a>
-                    <a href="https://twitter.com/intent/tweet?hashtags=tacoVsSushi&text=hello!" target="_blank" class="decoyTweetIt twitter-share-button">Tweet it!</a>
+                    </Switch> */}
+                    <a href="" className="playAgain">Play again!</a>
+                    <a href="https://twitter.com/intent/tweet?hashtags=tacoVsSushi&text=hello!" target="_blank" className="decoyTweetIt twitter-share-button">Tweet it!</a>
                 </section>
         )
     }

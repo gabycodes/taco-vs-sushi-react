@@ -98,6 +98,8 @@ a:hover, a:focus {
 .splash {
     background: tomato;
     z-index: 9;
+    top: 0;
+    transition: top 1s ease-in;
 }
 .accent {
     width: 200px;
@@ -161,8 +163,9 @@ a.credits:hover {
     padding: 1px;
     position: fixed;
     transform: translateY(190%);
-    bottom: 0;
-    z-index: 25;
+    // bottom: 0;
+    bottom: 15vh;
+    z-index: 8;
     transition: transform 0.5s ease-in;
 }
 .progressBarHolder p {
@@ -281,7 +284,7 @@ div.leftSide, div.rightSide {
 }
 .result {
     height: 100vh;
-    background: url(assets/wallpaper.jpg);
+    background: url(../assets/wallpaper.jpg);
     padding: 20px;
     z-index: 0;
     border: 1px solid black
