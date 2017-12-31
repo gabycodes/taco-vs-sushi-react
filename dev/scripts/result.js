@@ -22,15 +22,15 @@ class Result extends React.Component {
     }
     render() {
         return (
-                <section className="result">
-                    <h3>{`${this.resultHeader}`}</h3>
-                    <div className="imgHolder">
-                    <img src={`${this.resultImageUrl}`} alt=""/>
-                    </div>
-                    <p>{`${this.resultBlurb}`}</p>
-                    <a href="" className="playAgain">Play again!</a>
-                    <a href={`https://twitter.com/intent/tweet?hashtags=tacoVsSushi&text=I'm on team ${this.result}! http://bit.ly/2jBDX6b #tacoVsSushi`} target="_blank" className="decoyTweetIt twitter-share-button">Tweet it!</a>
-                </section>
+            <section className="result">
+                <h3>{`${this.resultHeader}`}</h3>
+                <div className="imgHolder">
+                <img src={`${this.resultImageUrl}`} alt=""/>
+                </div>
+                <p>{`${this.resultBlurb}`}</p>
+                <a href="" className="playAgain">Play again!</a>
+                <a href={`https://twitter.com/intent/tweet?hashtags=tacoVsSushi&text=Team ${this.result} ftw! http://bit.ly/2jBDX6b #tacoVsSushi`} target="_blank" className="decoyTweetIt twitter-share-button">Tweet it!</a>
+            </section>
         )
     }
 }

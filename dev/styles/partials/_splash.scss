@@ -1,0 +1,59 @@
+.splash {
+    background: tomato;
+    z-index: 9;
+    top: 0;
+    transition: top 1s ease-in;
+
+    a.startQuiz {
+        margin-top: 0;
+    }
+    .startQuiz:hover, .startQuiz:focus {
+        border-color: white;
+        animation: wiggle 0.5s forwards 1;
+    }
+    .accent {
+        width: 200px;
+        position: absolute;
+    }
+    .accent:nth-of-type(2) {
+        right: 0;
+    }
+    header {
+        display: inline-block;
+    }
+    header p {
+        font-size: 2.5rem;
+        text-align: right;
+        margin: 0;
+        position: relative;
+        top: -5px;
+    }
+    a.credits {
+        text-align: center;
+        display: block;
+        position: absolute;
+        bottom: 2vh;
+        font-size: 1.8rem;
+        left: 50%;
+        transform: translateX(-50%);
+        text-decoration: none;
+        color: rgb(136, 34, 16);
+    }
+    a.credits:hover {
+        color: white;
+    }
+    .splashImages {
+        max-width: 550px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 0 auto;    
+    }
+    .imgHolder {
+        width: 40%;
+    }
+    .imgHolder:nth-of-type(2) {
+        position: relative;
+        top: 1vw;
+    }
+}

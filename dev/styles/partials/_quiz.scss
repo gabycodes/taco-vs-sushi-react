@@ -1,0 +1,102 @@
+.quiz {
+    .q .imgHolder {
+        width: 35%;
+    }
+    .q img.shaken {
+        border-radius: 50%;
+        width: 17vw;
+        height: 17vw;
+    }
+    .q img {
+        border-radius: 50%;
+    }
+    .q {
+        display: flex;
+        text-transform: uppercase;
+        top: 0;
+        transition: top 1s ease-in;
+    }
+    .q1 {
+        z-index: 7;
+    }
+    .q2 {
+        z-index: 6;
+    }
+    .q3 {
+        z-index: 5;
+    }
+    .q4 {
+        z-index: 4;
+    }
+    .q5 {
+        z-index: 3;
+    }
+    .q6 {
+        z-index: 2;
+    }
+    .q7 {
+        z-index: 1;
+    }
+    .answered {
+        top: -100vh;
+    }
+    section.submit {
+        z-index: 99;
+    }
+    a.submit {
+        position: fixed;
+        top: 75vh;
+        right: 0vw;
+        transform: translateX(100%);
+    }
+    .q1 div.leftSide  {
+        background: rgb(179, 20, 20); /* Darker */
+    }
+    .q1 div.rightSide {
+        background: rgb(204, 5, 5);
+    }
+    .q2 div.leftSide  {
+        background: rgb(48, 126, 25);
+    }
+    .q2 div.rightSide {
+        background: rgb(46, 114, 23); /* Darker */
+    }
+    .q3 div.leftSide  {
+        background: rgb(226, 0, 68); /* Darker */
+    }
+    .q3 div.rightSide {
+        background: rgb(255, 0, 76);
+    }
+    .q4 div.leftSide  {
+        background: rgb(0, 229, 255);
+    }
+    .q4 div.rightSide {
+        background: rgb(0, 206, 233); /* Darker */
+    }
+    .q5 div.leftSide  {
+        background: rgb(240, 112, 0); /* Darker */
+    }
+    .q5 div.rightSide {
+        background: rgb(255, 123, 0);
+    }
+    .q6 div.leftSide  {
+        background: rgb(128, 163, 0); 
+    }
+    .q6 div.rightSide {
+        background: rgb(117, 146, 0);/* Darker */
+    }
+    .q7 div.leftSide  {
+        background: rgb(81, 26, 223); /* Darker */
+    }
+    .q7 div.rightSide {
+        background: rgb(89, 38, 231);
+    }
+    div.leftSide, div.rightSide {
+        width: 50%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

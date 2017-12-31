@@ -1,0 +1,31 @@
+.progressBarHolder {
+    width: calc(100vw - 40px);
+    margin: 20px;
+    padding: 1px;
+    position: fixed;
+    transform: translateY(190%);
+    bottom: 15vh;
+    z-index: 8;
+    transition: bottom 0.5s ease-in;
+
+    p {
+        font-size: 2em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        margin: 0;
+    }
+    .progressBar {
+        background: black;
+        width: 100%;
+        height: 4vh;
+        padding: 5px;
+    }
+    .progress {
+        background: rgb(25, 186, 197);
+        height: 100%;
+        width: 0;
+        transition: width 1s ease-in,
+        background 1s ease-in-out;
+    }
+}

@@ -1,0 +1,31 @@
+.result {
+    height: 100vh;
+    background: url(../assets/wallpaper.jpg);
+    padding: 20px;
+    z-index: 0;
+    border: 1px solid black;
+
+    h3 {
+        position: relative;
+        margin-top: 21vh;
+        font-size: 6rem;
+        margin-bottom: -20px
+    }
+    p {
+        margin: 0 auto;
+        font-size: 2rem;
+        width: 60%;
+        text-shadow: 1px 1px 1px white;
+    }
+    .imgHolder {
+        width: 235px;
+        margin: 0 auto 0 auto;
+    }
+    .playAgain, .decoyTweetIt {
+        width: 30%;
+        font-size: 3rem;
+        padding: 5px 0;
+        text-transform: uppercase;
+        margin: 2% 1%;
+    }
+}
