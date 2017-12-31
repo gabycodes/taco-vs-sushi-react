@@ -33,12 +33,10 @@ class App extends React.Component {
       this.setState({
         progressBarVisible: true
       })
-      console.log("progress bar visible");
     } else {
       this.setState({
         progressBarVisible: false
       })
-      console.log("progress bar hidden");
     }
   }
   scoreKeeper(team) {
@@ -47,16 +45,16 @@ class App extends React.Component {
     if (team === "taco") {
       const tacoScoreNew = tacoScoreCurrent + 1;
       this.tacoScore === tacoScoreNew;
-      console.log(`tacoScoreNew: ${tacoScoreNew}`);
+      // console.log(`tacoScoreNew: ${tacoScoreNew}`);
       this.setState({
         tacoScore: tacoScoreNew
       })
       tacoScoreCurrent === tacoScoreNew;
-      console.log(`tacoScore: ${tacoScoreCurrent}`);
+      // console.log(`tacoScore: ${tacoScoreCurrent}`);
     } else if (team === "sushi") {
       const sushiScoreNew = sushiScoreCurrent + 1;
       this.sushiScore === sushiScoreNew;
-      console.log(`sushiScoreNew: ${sushiScoreNew}`);
+      // console.log(`sushiScoreNew: ${sushiScoreNew}`);
       this.setState({
         sushiScore: sushiScoreNew
       })

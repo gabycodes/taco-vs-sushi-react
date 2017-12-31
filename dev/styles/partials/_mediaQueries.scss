@@ -1,0 +1,88 @@
+/*   MEDIA QUERIES   */
+@media (max-width: 1000px) {
+    h2 {
+        font-size: 4vw;
+    }
+    .splashImages {
+        width: 70%;
+    }
+    .splash a {
+        font-size: 3rem;
+    }
+    a.credits {
+        font-size: 1.8rem;
+    }
+}
+@media (max-width: 800px) {
+    h1 {
+        font-size: 10vw;
+    }
+    .accent {
+        width: 25vw;
+    }
+    a.playAgain, a.decoyTweetIt {
+        font-size: 4vw;
+    }
+    .splash p {
+        font-size: 3.1vw;
+    }
+    .q p {
+        font-size: 3.8vw;
+    }
+    a.submit {
+        top: 79vh;
+    }
+    a.credits {
+        font-size: 1.8rem;
+    }
+}
+@media (max-width: 480px) {
+    h1 {
+        margin-top: 25vh;
+    }
+    h2 {
+        max-width: 330px;
+    }
+    h3 {
+        margin-top: 20px;
+        font-size: 3.4rem;
+        width: 90%;
+    }
+    section.q {
+        display: flex;
+        flex-direction: column;
+    }
+    .quiz .q .leftSide, .quiz .q .rightSide {
+        width: 100%;
+    }
+    .quiz .q .leftSide {
+        padding-top: 75px;
+    }
+    .quiz .q .rightSide {
+        padding-bottom: 100px;
+    }
+    .quiz .q img.shaken {
+        width: 90px;
+        height: 90px;
+    }
+    .quiz .q .imgHolder {
+        width: 90px;
+    }
+    .quiz .q p {
+        font-size: 1.8rem;
+    }
+    .text {
+        margin-top: 11px;
+        padding: 2px 65px;
+    }
+    .result .imgHolder {
+        width: 190px;
+        margin: 0 auto 0 auto;
+    }
+    a.credits {
+        font-size: 3.8vw;
+    }
+    .result h3 {
+        margin-top: 3vh;
+    }
+}

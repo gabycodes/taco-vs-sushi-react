@@ -48,6 +48,7 @@
         top: 75vh;
         right: 0vw;
         transform: translateX(100%);
+        transition: right 1s cubic-bezier(0.48, 0.23, 0.44, 1.19);
     }
     .q1 div.leftSide  {
         background: rgb(179, 20, 20); /* Darker */
