@@ -46,24 +46,30 @@ class App extends React.Component {
       const tacoScoreNew = tacoScoreCurrent + 1;
       this.tacoScore === tacoScoreNew;
       // console.log(`tacoScoreNew: ${tacoScoreNew}`);
-      this.setState({
-        tacoScore: tacoScoreNew
-      })
+      this.setState(
+        {
+          tacoScore: tacoScoreNew
+        },
+        () => console.log(`tacoScore = ${this.state.tacoScore}, sushiScore = ${this.state.sushiScore}`)
+      )
       tacoScoreCurrent === tacoScoreNew;
       // console.log(`tacoScore: ${tacoScoreCurrent}`);
     } else if (team === "sushi") {
       const sushiScoreNew = sushiScoreCurrent + 1;
       this.sushiScore === sushiScoreNew;
       // console.log(`sushiScoreNew: ${sushiScoreNew}`);
-      this.setState({
-        sushiScore: sushiScoreNew
-      })
+      this.setState(
+        {
+          sushiScore: sushiScoreNew
+        },
+        () => console.log(`tacoScore = ${this.state.tacoScore}, sushiScore = ${this.state.sushiScore}`)
+      )
     }
   }
   determineResult() {
-    console.log("getting result...");
+    // console.log("getting result...");
     let result = "";
-    console.log(`this.taco: ${this.state.tacoScore}, this.sushi: ${this.state.sushiScore}`);
+    console.log(`tacoScore: ${this.state.tacoScore}, sushiScore: ${this.state.sushiScore}`);
     if (this.state.tacoScore > this.state.sushiScore) {
       result = "taco"
       console.log(`You're on team ${result}`)
