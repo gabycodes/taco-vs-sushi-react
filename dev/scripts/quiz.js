@@ -60,7 +60,7 @@ class Quiz extends React.Component {
         this.props.scoreKeeper(team);
         const progressBar = document.getElementsByClassName("progress")[0];
         progressBar.style.width = "42.84%";
-        progressBar.style.backgroundColor = "rgb(48, 126, 25)";
+        progressBar.style.backgroundColor = "rgb(255, 32, 161)";
     }
     question4Answered(team) {
         this.setState({
