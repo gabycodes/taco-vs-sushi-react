@@ -8,7 +8,6 @@ class Quiz extends React.Component {
     constructor(props) {
         super();
         this.state = {
-            questionsAnswered: 0,
             q1: "notAnswered",            
             q2: "notAnswered",            
             q3: "notAnswered",            
@@ -35,7 +34,6 @@ class Quiz extends React.Component {
     }
     question1Answered(team) {
         this.setState({
-            questionsAnswered: 1,
             q1: "answered"
         })
         this.props.scoreKeeper(team);
@@ -44,7 +42,6 @@ class Quiz extends React.Component {
     }
     question2Answered(team) {
         this.setState({
-            questionsAnswered: 2,
             q2: "answered"
         })
         this.props.scoreKeeper(team);
@@ -54,7 +51,6 @@ class Quiz extends React.Component {
     }
     question3Answered(team) {
         this.setState({
-            questionsAnswered: 3,
             q3: "answered"
         })
         this.props.scoreKeeper(team);
@@ -64,7 +60,6 @@ class Quiz extends React.Component {
     }
     question4Answered(team) {
         this.setState({
-            questionsAnswered: 4,
             q4: "answered"
         })
         this.props.scoreKeeper(team);
@@ -74,7 +69,6 @@ class Quiz extends React.Component {
     }
     question5Answered(team) {
         this.setState({
-            questionsAnswered: 5,
             q5: "answered"
         })
         this.props.scoreKeeper(team);
@@ -84,7 +78,6 @@ class Quiz extends React.Component {
     }
     question6Answered(team) {
         this.setState({
-            questionsAnswered: 6,
             q6: "answered"
         })
         this.props.scoreKeeper(team);
@@ -95,14 +88,9 @@ class Quiz extends React.Component {
     question7Answered(team) {
         this.setState(
             {
-                questionsAnswered: 7
             },
             () => this.props.scoreKeeper(team)
         )
-        if (this.state.questionsAnswered === 7) {
-            // this.props.scoreKeeper(team);
-        }
-        // this.props.scoreKeeper(team);
         const progressBar = document.getElementsByClassName("progress")[0];
         progressBar.style.width = "100%";
         progressBar.style.backgroundColor = "rgb(204, 5, 5)";

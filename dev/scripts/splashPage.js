@@ -11,7 +11,6 @@ class SplashPage extends React.Component {
     flyAway(e) {
         const splashPage = document.getElementsByClassName("splash")[0];
         splashPage.style.top = "-100vh";
-        console.log("quiz started");
     }
     render() {
         return (
@@ -39,6 +38,5 @@ class SplashPage extends React.Component {
         )
     }
 }
-
 
 export default SplashPage;

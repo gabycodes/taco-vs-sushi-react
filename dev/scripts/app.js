@@ -45,7 +45,6 @@ class App extends React.Component {
     if (team === "taco") {
       const tacoScoreNew = tacoScoreCurrent + 1;
       this.tacoScore === tacoScoreNew;
-      // console.log(`tacoScoreNew: ${tacoScoreNew}`);
       this.setState(
         {
           tacoScore: tacoScoreNew
@@ -53,11 +52,9 @@ class App extends React.Component {
         () => console.log(`tacoScore = ${this.state.tacoScore}, sushiScore = ${this.state.sushiScore}`)
       )
       tacoScoreCurrent === tacoScoreNew;
-      // console.log(`tacoScore: ${tacoScoreCurrent}`);
     } else if (team === "sushi") {
       const sushiScoreNew = sushiScoreCurrent + 1;
       this.sushiScore === sushiScoreNew;
-      // console.log(`sushiScoreNew: ${sushiScoreNew}`);
       this.setState(
         {
           sushiScore: sushiScoreNew
@@ -67,25 +64,19 @@ class App extends React.Component {
     }
   }
   determineResult() {
-    // console.log("getting result...");
     let result = "";
-    console.log(`tacoScore: ${this.state.tacoScore}, sushiScore: ${this.state.sushiScore}`);
     if (this.state.tacoScore > this.state.sushiScore) {
       result = "taco"
-      console.log(`You're on team ${result}`)
     }
     if (this.state.tacoScore < this.state.sushiScore) {
       result = "sushi"
-      console.log(`You're on team ${result}`)
     }
     else if (this.state.tacoScore === this.state.sushiScore) {
       const randomNumber = Math.floor((Math.random() * 2) + 1);
       if (randomNumber === 1) {
         result = "taco"
-        console.log(`You're on team ${result}`)
       } else if (randomNumber === 2) {
         result = "taco"
-        console.log(`You're on team ${result}`)
       }
     }
     this.setState({
